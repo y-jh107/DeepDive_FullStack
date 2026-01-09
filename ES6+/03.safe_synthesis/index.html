@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Safe Synthesis</title>
+    <script src="../fx.js"></script>
+</head>
+
+<body>
+    ## 안전한 합성에 대해
+
+    1. map으로 합성하기
+
+    <script>
+        const f = x => x + 10;
+        const g = x => x - 5;
+        const fg = x => f(g(x));
+
+        _.go(
+            10,
+            fg,
+            console.log);
+
+        _.go(
+            [10],
+            L.map(fg),
+            _.each(console.log));
+    </script>
+</body>
+
+</html>
