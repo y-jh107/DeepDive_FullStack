@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Object Iterable Programming</title>
+    <script src="../fx.js"></script>
+</head>
+
+<body>
+    ## 객체를 이터러블 프로그래밍으로 다루기
+
+    <script>
+        const obj1 = {
+            a: 1,
+            b: 2,
+            c: 3
+        }
+    </script>
+
+    1. values
+
+    <script>
+        console.log(Object.values(obj1));
+
+        L.values = function* (obj) {
+            for (const k in obj) {
+                console.log(k);
+                yield obj[k];
+            }
+        }
+
+        _.go(
+            obj1,
+            L.values,
+            _.map(a => a + 10),
+            L.take(2),
+            _.reduce((a, b) => a + b),
+            console.log);
+    </script>
+</body>
+
+</html>
