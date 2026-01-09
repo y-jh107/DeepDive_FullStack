@@ -102,6 +102,31 @@
             L.take(10),
             _.reduce((a, b) => a + b),
             console.log);
+        console.clear();
+    </script>
+
+    5. object
+
+    <script>
+        const a = [['a', 1], ['b', 2], ['c', 3]];
+        const b = { a: 1, b: 2, c: 3 };
+
+        // const object = entries => _.go(
+        //     entries,
+        //     L.map(([k, v]) => ({ [k]: v})),
+        //     _.reduce(Object.assign));
+
+        const object = entries =>
+            _.reduce((obj, [k, v]) => (obj[k] = v, obj), {}, entries)
+
+        console.log(object(L.entries({ b: 2, c: 3 })));
+
+        let m = new Map();
+        m.set('a', 10);
+        m.set('b', 20);
+        m.set('c', 30);
+
+        console.log(m);
     </script>
 </body>
 
