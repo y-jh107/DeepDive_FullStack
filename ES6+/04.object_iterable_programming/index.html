@@ -37,6 +37,26 @@
             L.take(2),
             _.reduce((a, b) => a + b),
             console.log);
+
+        console.clear();
+    </script>
+
+    2. entries
+
+    <script>
+        L.entries = function *(obj) {
+            for (const k in obj) {
+                yield [k, obj[k]];
+            }
+        };
+
+        _.go(
+            obj1,
+            L.entries,
+            L.filter(([_, v]) => v % 2),
+            L.map(([k, v]) => ({ [k]: v })),
+            _.reduce(Object.assign),
+            console.log);
     </script>
 </body>
 
