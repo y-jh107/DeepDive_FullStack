@@ -176,6 +176,56 @@
     </script>
 
     <script>
+        const Ui = {};
+
+        Ui.message = _.curry((btns, msg) => new Promise(resolve => _.go(
+            `
+                <div class="confirm">
+                    <div class="body">
+                        <div class="msg">${msg}</div>
+                        <div class=buttons">
+                            ${_.strMap(btn => `
+                                <button type="button" class="${btn.type}">${btn.name}</button>
+                            `, btns)}
+                        </div>
+                    </div>
+                </div>
+            `,
+            $.el,
+            $.append($.qs('body')),
+            ..._.map(btn => _.tap(
+                $.find(`.${btn.type}`),
+                $.on('click', e => _.go(
+                    e.currentTarget,
+                    $.closest('.confirm'),
+                    $.remove,
+                    _ => resolve(btn.value)
+                ))), btns),
+        )));
+
+        Ui.confirm = Ui.message([
+            { name: '취소', type: 'cancel', value: false },
+            { name: '확인', type: 'ok', value: true },
+        ]);
+
+        Ui.alert = Ui.message([
+            { name: '확인', type: 'ok', value: true },
+        ]);
+
+        Ui.remover = (btnSel, targetSel, before = a => a, after = a => a) => _.pipe(
+            $.findAll(btnSel),
+            $.on('click', async ({ currentTarget: ct }) =>
+                await Ui.confirm('정말 삭제하시겠습니까?') &&
+                _.go(
+                    ct,
+                    $.closest(targetSel),
+                    _.tap(before),
+                    $.remove,
+                    _.tap(after)))
+        );
+    </script>
+
+    <script>
         const Images = {};
 
         Images.fetch = () => new Promise(resolve => setTimeout(resolve([
@@ -215,7 +265,7 @@
             return _.groupBy(_ => Math.floor(r.next().value / size), iter);
         });
 
-        C.takeAllWithLimit = _.curry((limit = Infinity, iter) => 
+        C.takeAllWithLimit = _.curry((limit = Infinity, iter) =>
             _.go(
                 iter,
                 _.groupBySize(limit),
@@ -228,50 +278,8 @@
             Images.tmpl,
             $.el,
             $.append($.qs('body')),
-            Images.loader(4),
-            $.findAll('.remove'),
-            $.on('click', async ({ currentTarget: ct }) =>
-                await Ui.confirm('정말 삭제하시겠습니까?') &&
-                _.go(
-                    ct,
-                    $.closest('.image'),
-                    $.remove)));
-
-        const Ui = {};
-
-        Ui.message = _.curry((btns, msg) => new Promise(resolve => _.go(
-            `
-                <div class="confirm">
-                    <div class="body">
-                        <div class="msg">${msg}</div>
-                        <div class=buttons">
-                            ${_.strMap(btn => `
-                                <button type="button" class="${btn.type}">${btn.name}</button>
-                            `, btns)}
-                        </div>
-                    </div>
-                </div>
-            `,
-            $.el,
-            $.append($.qs('body')),
-            ..._.map(btn => _.tap(
-                $.find(`.${btn.type}`),
-                $.on('click', e => _.go(
-                    e.currentTarget,
-                    $.closest('.confirm'),
-                    $.remove,
-                    _ => resolve(btn.value)
-                ))), btns),
-        )));
-
-        Ui.confirm = Ui.message([
-            { name: '취소', type: 'cancel', value: false },
-            { name: '확인', type: 'ok', value: true },
-        ]);
-
-        Ui.alert = Ui.message([
-            { name: '확인', type: 'ok', value: true },
-        ]);
+            Ui.remover('.remove', '.image', _ => console.log('서버통신')),
+            Images.loader(4));
     </script>
 </body>
 
