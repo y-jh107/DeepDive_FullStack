@@ -81,17 +81,52 @@ console.log(name5);
 // console.log(num2); // 현재 num 값 -> 9
 // console.log(--num2); // 전위연산 -> 8
 
-let num1 = 10;
-let num2 = "10";
+// let num1 = 10;
+// let num2 = "10";
 
-console.log(num1 === num2); // type 검사
-console.log(num1 == num2); // 값만 검사
+// console.log(num1 === num2); // type 검사
+// console.log(num1 == num2); // 값만 검사
 
-let num;
-num = num ?? 20; // null병합 연산자, undefined나 null이면 20 대입
+// let num;
+// num = num ?? 20; // null병합 연산자, undefined나 null이면 20 대입
 
-console.log(num);
+// console.log(num);
 
-let num3 = 100;
+// let num3 = 100;
 
-console.log(num3 % 2 === 0 ? "짝수" : "홀수");
+// console.log(num3 % 2 === 0 ? "짝수" : "홀수");
+
+let num = 5;
+
+if (num === 10) {
+  console.log(`num의 값은 10입니다. `);
+} else {
+  console.log(`num의 값은 ${num}입니다.`);
+}
+
+if (num === 10) {
+  console.log(`num의 값은 10입니다. `);
+} else if (num < 10) {
+  console.log(`num의 값은 10보다 작습니다.`);
+} else {
+  console.lof("num의 값은 10보다 큽니다.");
+}
+
+let fruit = "apple";
+
+switch (fruit) {
+  case "banana":
+    console.log("바나나");
+    break;
+  case "orange":
+    console.log("오렌지");
+    break;
+  case "apple":
+    console.log("사과");
+    break;
+  case "grape":
+    console.log("포도");
+    break;
+  default:
+    console.log("다른 과일");
+}
