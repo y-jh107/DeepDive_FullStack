@@ -296,14 +296,53 @@
 // console.log(person.pet);
 // console.log(person["name"]);
 
-const person = {
-  name: "홍길동",
-  age: 20,
-  pet: "cat",
-  print: function () {
-    console.log(`제 이름은 ${this.name} 입니다.`);
-  },
-};
+// const person = {
+//   name: "홍길동",
+//   age: 20,
+//   pet: "cat",
+//   print: function () {
+//     console.log(`제 이름은 ${this.name} 입니다.`);
+//   },
+// };
 
-person.print();
-person["print"]();
+// person.print();
+// person["print"]();
+
+// let array1 = new Array(1, 2, 3); // 배열에 들어갈 것들을 정해주기
+// let array2 = new Array(3); // 배열의 크기를 정해주기
+
+// console.log(array1);
+// console.log(array2);
+
+// let array1 = [1, 2, 3];
+// let array2 = [3];
+
+// console.log(array1);
+// console.log(array2);
+
+// let arr = [
+//   { name: "홍길동" },
+//   1,
+//   "array",
+//   function () {
+//     console.log("hello world!");
+//   },
+//   null,
+//   undefined,
+// ];
+
+// const arr = [1, "hello", null];
+
+// arr.push(4);
+// arr.unshift(0);
+// arr[0] = 5;
+// arr[2] = undefined;
+// arr.pop();
+// arr.shift();
+
+// arr.pop();
+// console.log(arr.length);
+
+// console.log(arr[0]);
+// console.log(arr[1]);
+// console.log(arr[2]);
