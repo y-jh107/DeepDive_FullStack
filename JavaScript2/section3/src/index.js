@@ -264,3 +264,46 @@
 // }
 
 // start("jinhyuk", finish);
+
+// const person = {
+//   name: "홍길동",
+//   age: 20,
+//   pet: "cat",
+// };
+
+// const getValue = (key) => {
+//   console.log(person[key]);
+// };
+
+// getValue("name");
+
+// person.phone = "010-1234-5678";
+// person["height"] = 180;
+
+// console.log(person);
+
+// person.age = 25;
+// person["pet"] = "dog";
+
+// console.log(person);
+
+// delete person.pet;
+// delete person["age"];
+
+// console.log(person);
+// console.log(person.name);
+// console.log(person.age);
+// console.log(person.pet);
+// console.log(person["name"]);
+
+const person = {
+  name: "홍길동",
+  age: 20,
+  pet: "cat",
+  print: function () {
+    console.log(`제 이름은 ${this.name} 입니다.`);
+  },
+};
+
+person.print();
+person["print"]();
