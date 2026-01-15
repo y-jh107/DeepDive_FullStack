@@ -405,14 +405,73 @@
 //     console.log(i);
 // }
 
-let person = {
-  name: "홍길동",
-  age: 25,
-  height: 180,
-};
+// let person = {
+//   name: "홍길동",
+//   age: 25,
+//   height: 180,
+// };
 
-for (let key in person) {
-  console.log(`key: ${key}, value: ${person[key]}`);
-}
+// for (let key in person) {
+//   console.log(`key: ${key}, value: ${person[key]}`);
+// }
 
 // ------------ 반복문
+
+let arr = [1, 2, 3, 4, 5];
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// arr.forEach((elm, idx, array) => {
+//   console.log(`${idx}번째 요소는 ${elm}입니다.`);
+//   console.log(array);
+// });
+
+// let newArray = [];
+
+// for (let i = 0; i < arr.length; i++) {
+//   newArray.push(arr[i] * 10);
+// }
+
+// let newArray = arr.map((elm) => {
+//   return elm * 10;
+// });
+
+// console.log(newArray);
+
+// let colors = ["green", "blue", "purple"];
+// console.log(colors[2]);
+// console.log(colors[colors.length - 1]);
+
+// console.log(colors.at(-1));
+// console.log(colors.includes("blue", 2));
+// console.log(colors.includes("blue", 1));
+
+// console.log(colors.indexOf("purple"));
+// console.log(colors.indexOf("yellow"));
+// console.log(colors.indexOf("blue", 1));
+
+// let colors = [
+//   { id: 1, color: "green" },
+//   { id: 2, color: "blue" },
+//   { id: 3, color: "purple" },
+//   { id: 4, color: "yello" },
+// ];
+
+// colors.findIndex((elm, idx, array) =>
+//   console.log(`${idx} 번째 값은 id: ${elm.id}, color: ${elm.color}`)
+// );
+// colors.findIndex((elm, idx, array) => console.log(array));
+
+// let idx = colors.find((elm) => elm.color === "purple");
+
+// console.log(idx);
+
+// let filterArray = colors.filter((elm, idx, array) => elm.id > 1);
+// console.log(filterArray);
+
+// let sliceArray = colors.slice(1, 3);
+// console.log(sliceArray);
+
+// ------ 배열 내장함수-1
