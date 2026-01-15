@@ -48,10 +48,10 @@
 
 // ----- 배열과 객체 구조분해할당
 
-const toy = {
-  type: "bear",
-  price: 15000,
-};
+// const toy = {
+//   type: "bear",
+//   price: 15000,
+// };
 
 // const blueToy = {
 //   type: "bear",
@@ -137,29 +137,134 @@ const toy = {
 //   console.log("종료");
 // });
 
-const workA = () => {
-  setTimeout(() => {
-    console.log("workA");
-  }, 5000);
-};
+// const workA = () => {
+//   setTimeout(() => {
+//     console.log("workA");
+//   }, 5000);
+// };
 
-const workB = () => {
-  setTimeout(() => {
-    console.log("workB");
-  }, 3000);
-};
+// const workB = () => {
+//   setTimeout(() => {
+//     console.log("workB");
+//   }, 3000);
+// };
 
-const workC = () => {
-  setTimeout(() => {
-    console.log("workC");
-  }, 10000);
-};
+// const workC = () => {
+//   setTimeout(() => {
+//     console.log("workC");
+//   }, 10000);
+// };
 
-const workD = () => {
-  console.log("workD");
-};
+// const workD = () => {
+//   console.log("workD");
+// };
 
-workA();
-workB();
-workC();
-workD();
+// workA();
+// workB();
+// workC();
+// workD();
+
+// ----- 비동기처리
+
+// const workA = (value, callback) => {
+//   setTimeout(() => {
+//     callback(value + 5);
+//   }, 5000);
+// };
+
+// const workB = (value, callback) => {
+//   setTimeout(() => {
+//     callback(value - 3);
+//   }, 3000);
+// };
+
+// const workC = (value, callback) => {
+//   setTimeout(() => {
+//     callback(value + 10);
+//   }, 10000);
+// };
+
+// const workD = (value, callback) => {
+//   callback(value);
+// };
+
+// workA(10, (resA) => {
+//   console.log(`1. ${resA}`);
+//   workB(resA, (resB) => {
+//     console.log(`2. ${resB}`);
+//     workC(resB, (resC) => {
+//       console.log(`3. ${resC}`);
+//     });
+//   });
+// });
+
+// workD("workD", (res) => {
+//   console.log(res);
+// });
+
+// const executor = (resolve, reject) => {
+//   setTimeout(() => {
+//     reject("실패");
+//   }, 3000);
+// };
+
+// const promise = new Promise(executor);
+// promise
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// const workA = (value) => {
+//   const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(value + 5);
+//     }, 5000);
+//   });
+//   return promise;
+// };
+
+// const workB = (value) => {
+//   const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(value - 3);
+//     }, 3000);
+//   });
+//   return promise;
+// };
+
+// const workC = (value) => {
+//   const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(value + 10);
+//     }, 10000);
+//   });
+//   return promise;
+// };
+
+// workA(10).then((resA) => {
+//   console.log(`1. ${resA}`);
+//   workB(resA).then((resB) => {
+//     console.log(`2. ${resB}`);
+//     workC(resB).then((resC) => {
+//       console.log(`3. ${resC}`);
+//     });
+//   });
+// });
+
+// workA(10)
+//   .then((resA) => {
+//     console.log(`1. ${resA}`);
+//     return workB(resA);
+//   })
+//   .then((resB) => {
+//     console.log(`2. ${resB}`);
+//     return workC(resB);
+//   })
+//   .then((resC) => {
+//     console.log(`3. ${resC}`);
+//   });
+
+// ----- Promise 객체
