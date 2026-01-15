@@ -268,3 +268,62 @@
 //   });
 
 // ----- Promise 객체
+
+// const delay = (ms) => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, ms);
+//   });
+// };
+
+// const start = async () => {
+//     delay(2000).then(() => {
+//       console.log("대기");
+//     });
+//   return "대기";
+// };
+
+// start().then((res) => {
+//   console.log(res);
+// });
+
+// const delay = (ms) => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, ms);
+//   });
+// };
+
+// const start = async () => {
+//   //   delay(2000).then(() => {
+//   //     console.log("대기");
+//   //   });
+//   return "대기";
+// };
+
+// start().then((res) => {
+//   console.log(res);
+// });
+
+// const delay = (ms) => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve();
+//     }, ms);
+//   });
+// };
+
+// const start = async () => {
+//   try {
+//     await delay(2000);
+//     console.log("대기");
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
+
+// start();
+
+// ----- async와 await
