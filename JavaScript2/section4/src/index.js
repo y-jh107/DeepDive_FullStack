@@ -116,10 +116,50 @@ const toy = {
 
 // print(1, 2, 3, 4, 5, 6);
 
-const print = (...rest) => {
-  console.log(rest);
+// const print = (...rest) => {
+//   console.log(rest);
+// };
+
+// const numbers = [1, 2, 3, 4, 5, 6];
+// print(numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5]);
+// print(...numbers);
+
+// ------ rest
+
+// const work = (callback) => {
+//   setTimeout(() => {
+//     console.log("3초만 기다리세요");
+//     callback();
+//   }, 3000);
+// };
+
+// work(() => {
+//   console.log("종료");
+// });
+
+const workA = () => {
+  setTimeout(() => {
+    console.log("workA");
+  }, 5000);
 };
 
-const numbers = [1, 2, 3, 4, 5, 6];
-// print(numbers[0], numbers[1], numbers[2], numbers[3], numbers[4], numbers[5]);
-print(...numbers);
+const workB = () => {
+  setTimeout(() => {
+    console.log("workB");
+  }, 3000);
+};
+
+const workC = () => {
+  setTimeout(() => {
+    console.log("workC");
+  }, 10000);
+};
+
+const workD = () => {
+  console.log("workD");
+};
+
+workA();
+workB();
+workC();
+workD();
