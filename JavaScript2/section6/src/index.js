@@ -11,3 +11,24 @@
 
 // console.log(`${month}월 ${date}일 ${week[day]}요일`);
 // console.log(`${hours}:${minutes}`);
+
+// ------ Date 객체
+
+// const inputElement = document.getElementById("input");
+
+// inputElement.addEventListener("mouseover", () => {
+//   console.log(inputElement.value);
+// });
+
+// const selectElement = document.getElementById("color");
+// const resultElement = document.getElementById("result");
+
+// selectElement.addEventListener("change", () => {
+//   resultElement.textContent = selectElement.value;
+// });
+
+// selectElement.addEventListener("change", () => {
+//   console.log(selectElement.value);
+// });
+
+// ------ 입력 폼 활용하기
