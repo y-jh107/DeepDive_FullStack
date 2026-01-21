@@ -1,9 +1,20 @@
 import "./App.css";
-import ChannelCard from "./ChannelCard";
-import { useState } from "react";
+import { SubscriptionProvider } from "./contexts/SubscriptionContext";
+import Header from "./Header";
+import SubscribeButton from "./SubscribeButton";
+import SubscriberInfo from "./SubscriberInfo";
 
 function App() {
-  return <ChannelCard name="이웃집 고영희씨" />;
+  return (
+    <>
+      <h2>구독 관리 대시보드</h2>
+      <SubscriptionProvider>
+        <Header />
+        <SubscribeButton />
+        <SubscriberInfo />
+      </SubscriptionProvider>
+    </>
+  );
 }
 
 export default App;
