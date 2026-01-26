@@ -1,13 +1,17 @@
 import "./TodoItem.css";
 import { useRef } from "react";
 
-const TodoItem = ({ id, isDone, content, date, onUpdate }) => {
+const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
   const contentRef = useRef();
 
   const onChangeCheckbox = () => {
     onUpdate(id);
     if (!isDone) contentRef.current.classList.add("clear");
     else contentRef.current.classList.remove("clear");
+  };
+
+  const onClickDeleteButton = () => {
+    onDelete(id);
   };
 
   return (
@@ -17,7 +21,7 @@ const TodoItem = ({ id, isDone, content, date, onUpdate }) => {
         {content}
       </div>
       <div className="date">{new Date(date).toLocaleDateString()}</div>
-      <button>삭제</button>
+      <button onClick={onClickDeleteButton}>삭제</button>
     </div>
   );
 };
