@@ -1,0 +1,17 @@
+.Editor {
+  display: flex;
+  gap: 24px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.Editor > input {
+  flex: 1;
+  border: none;
+  border-bottom: 1px solid #3e3e3e;
+}
+
+.Editor > input:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(255, 30, 30);
+}
